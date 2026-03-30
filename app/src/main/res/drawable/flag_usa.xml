@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="640dp"
+    android:height="480dp"
+    android:viewportWidth="640"
+    android:viewportHeight="480">
+    <!-- Red Background Stripes -->
+    <path
+        android:fillColor="#B22234"
+        android:pathData="M0,0h640v480H0z" />
+    <!-- White Stripes -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M0,36.9h640v36.9H0zM0,110.8h640v36.9H0zM0,184.6h640v36.9H0zM0,258.5h640v36.9H0zM0,332.3h640v36.9H0zM0,406.2h640v36.9H0z" />
+    <!-- Blue Canton -->
+    <path
+        android:fillColor="#3C3B6E"
+        android:pathData="M0,0h256v258.5H0z" />
+    <!-- Simplified Stars (as dots for performance/clarity in small view) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M21.3,21.5h4v4h-4zM53.3,21.5h4v4h-4zM85.3,21.5h4v4h-4zM117.3,21.5h4v4h-4zM149.3,21.5h4v4h-4zM181.3,21.5h4v4h-4zM213.3,21.5h4v4h-4zM37.3,43h4v4h-4zM69.3,43h4v4h-4zM101.3,43h4v4h-4zM133.3,43h4v4h-4zM165.3,43h4v4h-4zM197.3,43h4v4h-4zM21.3,64.6h4v4h-4zM53.3,64.6h4v4h-4zM85.3,64.6h4v4h-4zM117.3,64.6h4v4h-4zM149.3,64.6h4v4h-4zM181.3,64.6h4v4h-4zM213.3,64.6h4v4h-4zM37.3,86.2h4v4h-4zM69.3,86.2h4v4h-4zM101.3,86.2h4v4h-4zM133.3,86.2h4v4h-4zM165.3,86.2h4v4h-4zM197.3,86.2h4v4h-4zM21.3,107.7h4v4h-4zM53.3,107.7h4v4h-4zM85.3,107.7h4v4h-4zM117.3,107.7h4v4h-4zM149.3,107.7h4v4h-4zM181.3,107.7h4v4h-4zM213.3,107.7h4v4h-4zM37.3,129.3h4v4h-4zM69.3,129.3h4v4h-4zM101.3,129.3h4v4h-4zM133.3,129.3h4v4h-4zM165.3,129.3h4v4h-4zM197.3,129.3h4v4h-4z" />
+</vector>
