@@ -14,7 +14,6 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-        // Recuperando o objeto Player (mesma lógica de checagem de API)
         val player = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getParcelableExtra("PLAYER_DATA", Player::class.java)
         } else {
@@ -32,7 +31,6 @@ class ResultActivity : AppCompatActivity() {
         }
 
         btnRestart.setOnClickListener {
-            // Volta para a primeira tela e limpa a pilha de atividades
             val intent = Intent(this, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)

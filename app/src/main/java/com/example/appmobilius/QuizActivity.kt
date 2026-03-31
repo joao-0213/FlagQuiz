@@ -13,9 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.appmobilius.model.Player
 
 class QuizActivity : AppCompatActivity() {
-
-    // Lista de todas as bandeiras disponíveis (Mínimo 15 como o professor pediu)
-    // ATENÇÃO: Você precisa adicionar as imagens na pasta res/drawable
     private val flags = listOf(
         R.drawable.flag_brazil, R.drawable.flag_france, R.drawable.flag_japan,
         R.drawable.flag_germany, R.drawable.flag_italy, R.drawable.flag_canada,
@@ -23,16 +20,14 @@ class QuizActivity : AppCompatActivity() {
         R.drawable.flag_portugal, R.drawable.flag_mexico, R.drawable.flag_chile,
         R.drawable.flag_china, R.drawable.flag_australia, R.drawable.flag_india
     )
-
-    // Lista de nomes correspondentes (para validar a resposta)
-    private val countryNames = mapOf(
+    private val countryNames = mapOf
         R.drawable.flag_brazil to "Brasil",
         R.drawable.flag_france to "França",
         R.drawable.flag_japan to "Japão",
         R.drawable.flag_germany to "Alemanha",
         R.drawable.flag_italy to "Itália",
         R.drawable.flag_canada to "Canadá",
-        R.drawable.flag_usa to "EUA",
+        R.drawable.flag_usa to "Estados Unidos",
         R.drawable.flag_argentina to "Argentina",
         R.drawable.flag_spain to "Espanha",
         R.drawable.flag_portugal to "Portugal",
@@ -51,7 +46,6 @@ class QuizActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
 
-        // Recuperando o objeto Player (Com checagem de versão da API como o professor gosta)
         currentPlayer = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getParcelableExtra("PLAYER_DATA", Player::class.java)!!
         } else {
@@ -59,8 +53,6 @@ class QuizActivity : AppCompatActivity() {
             intent.getParcelableExtra("PLAYER_DATA")!!
         }
 
-        // Embaralha as bandeiras e pega as 5 primeiras para garantir que não repita
-        // Diferença: random() pega UM aleatório. shuffled().take(5) embaralha tudo e pega os 5 do topo.
         selectedFlags = flags.shuffled().take(5)
 
         loadQuestion()
@@ -78,7 +70,6 @@ class QuizActivity : AppCompatActivity() {
                     etAnswer.text.clear()
                     btnSubmit.text = "Responder"
                 } else {
-                    // Fim do quiz, vai para a tela de resultado
                     val intent = Intent(this, ResultActivity::class.java)
                     intent.putExtra("PLAYER_DATA", currentPlayer)
                     startActivity(intent)
@@ -93,8 +84,6 @@ class QuizActivity : AppCompatActivity() {
     private fun loadQuestion() {
         val imgFlag = findViewById<ImageView>(R.id.imgFlag)
         val tvCounter = findViewById<TextView>(R.id.tvCounter)
-        
-        // Lógica Obrigatória:
         val currentFlag = selectedFlags[currentIndex]
         imgFlag.setImageResource(currentFlag)
         
